@@ -28,4 +28,15 @@ build:
 
 # Start Dev App
 start: build
-	docker-compose -f docker-compose.yml -f docker-compose.override.yml up
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d 
+
+# Bash container
+bash:
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml exec mooc-backend bash
+
+
+test:
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml run mooc-backend npm run test:mooc:backend:features
+
+down: 
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml down
