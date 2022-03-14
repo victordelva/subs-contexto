@@ -25,3 +25,7 @@ default: build
 # Build image
 build:
 	docker build -t $(IMAGE_NAME):dev .
+
+# Start Dev App
+start: build
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up

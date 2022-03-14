@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  mooc-backend:
+    command: bash -c "npm run dev:mooc:backend"
+    environment:
+      - PORT=3000
+    ports:
+      - 3000:3000
